@@ -1,11 +1,18 @@
+<!-- eslint-disable prettier/prettier -->
 <template>
-  <div class="home">Rick and Morti</div>
+  <div class="home">
+    Rick and Morty
+    <Char_block></Char_block>
+  </div>
 </template>
 
 <script>
-// @ imis an alias to /src
+import Char_block from "@/components/Char_block.vue";
 
 export default {
   name: "rickLIst",
+  components: {
+    Char_block,
+  },
 };
 </script>
