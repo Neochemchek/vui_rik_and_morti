@@ -2,20 +2,26 @@ import { createStore } from "vuex";
 import axiosInstance from "@/api/index";
 import { CHARACTERS_BY_PAGE } from "@/api/routes";
 export default createStore({
-  state: {},
-  getters: {},
-  modules: {},
+  state: {
+    characters: {},
+    pages: 0,
+  },
   mutations: {
-    setCharacter(state, { page, character }) {
-      state.character[page] = character;
+    setCharacters(state, { page, characters }) {
+      state.characters[page] = characters;
+    },
+    setPages(state, pages) {
+      state.pages = pages;
     },
   },
   actions: {
-    fetchcharacter(page) {
+    fetchCharacter({ commit }, page) {
       return axiosInstance
         .get(CHARACTERS_BY_PAGE(page))
-        .then((res) => {
-          console.log(res);
+        .then(({ data }) => {
+          const { info, results } = data;
+          commit("setCharacters", { page, characters: results });
+          commit("setPages", info.pages);
         })
         .catch((err) => console.log(err));
     },

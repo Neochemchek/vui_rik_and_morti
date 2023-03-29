@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     Rick and Morty
-    {{ character }}
+    {{ characters }}
     <Char_block></Char_block>
   </div>
 </template>
@@ -15,11 +15,11 @@ export default {
     Char_block,
   },
   created() {
-    this.$store.dispatch("fetchcharacter", 1);
+    this.$store.dispatch("fetchCharacter", 1);
   },
   computed: {
-    character() {
-      return this.$store.state.character;
+    characters() {
+      return this.$store.state.characters;
     },
   },
 };
