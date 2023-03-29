@@ -4,19 +4,25 @@ import { CHARACTERS_BY_PAGE } from "@/api/routes";
 export default createStore({
   state: {
     character: {},
+    pages: 0,
   },
   getters: {},
   mutations: {
     setCharacter(state, { page, character }) {
       state.character[page] = character;
     },
+    setPages(state, pages) {
+      state.pages = pages;
+    },
   },
   actions: {
-    fetchCharacters(page) {
+    fetchCharacters({ commit }, page) {
       return axiosInstance
         .get(CHARACTERS_BY_PAGE(page))
-        .then((res) => {
-          console.log(res);
+        .then(({ data }) => {
+          const { info, result } = data;
+          commit("setCharacters", { page, character: result });
+          commit("setPages", info.pages);
         })
         .catch((err) => console.log(err));
     },

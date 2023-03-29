@@ -13,6 +13,8 @@ export default {
   components: {
     Char_block,
   },
-  methods: {},
+  created() {
+    this.$store.dispatch("fetchCharacters", 1);
+  },
 };
 </script>
