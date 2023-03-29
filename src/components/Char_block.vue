@@ -1,17 +1,12 @@
 <template>
-  <div>
-    CharBlock
-    {{ message }}
-  </div>
+  <div>CharBlock</div>
 </template>
 
 <script>
 export default {
   name: "Char_block_list",
   data() {
-    return {
-      message: "Hello World",
-    };
+    return {};
   },
 };
 </script>

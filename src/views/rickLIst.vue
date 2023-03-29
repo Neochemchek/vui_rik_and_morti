@@ -1,4 +1,3 @@
-<!-- eslint-disable prettier/prettier -->
 <template>
   <div class="home">
     Rick and Morty
@@ -14,5 +13,6 @@ export default {
   components: {
     Char_block,
   },
+  methods: {},
 };
 </script>
