@@ -12,7 +12,7 @@ export default createStore({
     },
   },
   actions: {
-    fetchCharavters(page) {
+    fetchCharacters(page) {
       return axiosInstance
         .get(CHARACTERS_BY_PAGE(page))
         .then((res) => {
