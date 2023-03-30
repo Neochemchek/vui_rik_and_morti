@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "Char_block_list",
+  name: `character-block`,
   data() {
     return {};
   },

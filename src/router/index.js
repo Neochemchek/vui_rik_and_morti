@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import rickLIst from "../views/rickLIst.vue";
+import RickAndMortyList from "../views/RickAndMortyList.vue";
 import mort_char from "../views/mort_char.vue";
 
 const routes = [
   {
     path: "/",
-    name: "rickLIst",
-    component: rickLIst,
+    name: "RickAndMortyList",
+    component: RickAndMortyList,
   },
   {
     path: "/character",
