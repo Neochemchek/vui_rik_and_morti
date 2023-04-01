@@ -9,9 +9,12 @@ export default createStore({
   mutations: {
     setCharacters(state, { page, characters }) {
       state.characters[page] = characters;
+      console.log("qqqqqqqq", state);
     },
     setPages(state, pages) {
       state.pages = pages;
+      // console.log("PADES", pages);
+      // console.log("STATE", state);
     },
   },
   actions: {
@@ -21,6 +24,7 @@ export default createStore({
         const { info, results } = data;
         commit("setCharacters", { page, characters: results });
         commit("setPages", info.pages);
+        console.log("GGGGGGGGGGG", data);
       } catch (err) {
         throw new Error(err);
       }
