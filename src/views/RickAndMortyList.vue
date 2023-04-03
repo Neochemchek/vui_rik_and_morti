@@ -3,8 +3,8 @@
     Rick and Morty
     <character-block
       v-for="character in characters"
-      :character="character"
       :key="character.id"
+      :character="character"
     ></character-block>
   </div>
 </template>
