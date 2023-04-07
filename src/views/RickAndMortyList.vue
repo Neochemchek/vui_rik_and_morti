@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" style="width: 100%">
     Rick and Morty
     <div class="charcters-list">
       <character-block
@@ -11,8 +11,9 @@
     <v-pagination
       v-model="currentPage"
       :pages="pages"
-      :range-size="3"
+      :range-size="20"
       active-color="#DCEDFF"
+      @update:modelValue="currentPage"
     />
   </div>
 </template>
