@@ -1,17 +1,18 @@
 <template>
   <div class="home">
     Rick and Morty
-    <character-block
-      v-for="character in characters"
-      :key="character.id"
-      :character="character"
-    ></character-block>
+    <div class="charcters-list">
+      <character-block
+        v-for="character in characters"
+        :key="character.id"
+        :character="character"
+      ></character-block>
+    </div>
   </div>
 </template>
 
 <script>
 import CharacterBlock from "@/components/CharacterBlock.vue";
-
 export default {
   name: "rick-and-morty-list",
   components: {

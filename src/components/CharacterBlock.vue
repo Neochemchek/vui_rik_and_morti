@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="character-block_image">
     <div><img :src="character.image" :alt="character.name" /></div>
-    <div>
+    <div class="character-block_info">
       <span>
         {{ character.name }}
       </span>
