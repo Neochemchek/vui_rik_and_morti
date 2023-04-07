@@ -1,16 +1,18 @@
 .charcters-list{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
     width: 22%;
     margin: 10px;
+    gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: start;
+    align-content: stretch;
+    align-items: start;
 }
 .character-block{
     display: flex;
     justify-content: row;
-    &_image{
-        width: 250px;
+    &_image img{
+        width: 160px;
         height: auto;
     }
     &_info{
