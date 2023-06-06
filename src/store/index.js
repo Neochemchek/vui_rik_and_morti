@@ -4,7 +4,7 @@ import { CHARACTERS_BY_PAGE } from "@/api/routes";
 export default createStore({
   state: {
     characters: {},
-    pages: 0,
+    pages: {}
   },
   mutations: {
     setCharacters(state, { page, characters }) {
@@ -15,7 +15,7 @@ export default createStore({
       state.pages = pages;
       // console.log("PADES", pages);
       // console.log("STATE", state);
-    },
+    }
   },
   actions: {
     async fetchCharacter({ commit }, page) {
@@ -28,7 +28,7 @@ export default createStore({
       } catch (err) {
         throw new Error(err);
       }
-    },
+    }
   },
   getters: {
     getCharasterById: (state) => (id, page) => {
@@ -41,6 +41,6 @@ export default createStore({
     getCharastersByPage: (state) => (page) => {
       const pageCharacters = state.characters[page];
       return pageCharacters;
-    },
-  },
+    }
+  }
 });

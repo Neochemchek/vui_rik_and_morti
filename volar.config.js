@@ -1,1 +1,1 @@
-export const plugins = [require("@volar-plugins/vetur").default()];
+// export const plugins = [require("@volar-plugins/vetur").default()];
